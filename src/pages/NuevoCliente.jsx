@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom"
+import Formulario from "../components/Formulario"
+
 const NuevoCliente = () => {
 
     const navigate = useNavigate()
@@ -17,8 +19,17 @@ const NuevoCliente = () => {
       </div>
 
 
-      <div className="bg-lime-400 bg-opacity-60 rounded-schm md:w-3/4 mx-auto px-5 py-10">
-        <p>Formulario Aqui</p>
+      <div className="bg-lime-400 bg-opacity-60 rounded-schm md:w-3/4 mx-auto px-5 py-10 mt-20">
+
+        <form action="">
+          <Formulario/>
+
+          <input 
+            type="submit"
+            className="mt-5 w-full p-3 uppercase font-bold text-lg bg-yellow-500"
+            value="Registrar Cliente"
+           />
+        </form>
       </div>
     </>
   )
