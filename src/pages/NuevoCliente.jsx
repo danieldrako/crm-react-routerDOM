@@ -1,8 +1,12 @@
 import { Form, useNavigate } from "react-router-dom"
 import Formulario from "../components/Formulario"
 
-export function action(){
-  console.log('submit al formulario ')
+export async function action({request}){
+  const formData = await request.formData()
+  
+  const datos = Object.fromEntries(formData)
+
+  console.log(datos)
   return { ok: true }
 }
 
