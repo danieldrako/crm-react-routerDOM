@@ -50,8 +50,8 @@ function Index() {
 
   return (
     <>
-      <h1 className='font-black text-4xl text-sky-900'>Clientes</h1>
-      <p className='mt-3 text-sky-900'>Administra tus Clientes</p>
+      <h1 className='font-black text-4xl text-sky-700'>Clientes</h1>
+      <p className='mt-3 text-sky-600'>Administra tus Clientes</p>
 
       {clientes.length ? (
         <table className='w-full bg-lime-400 bg-opacity-40  shadow mt-5 table-auto'>
