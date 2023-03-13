@@ -3,12 +3,8 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Layout from './components/Layout'
-import NuevoCliente from './pages/NuevoCliente'
+import NuevoCliente, {action as nuevoClienteAction} from './pages/NuevoCliente'
 import Index, { loader as clientesLoader } from './pages/Index'
-
-
-
-
 
 const router = createBrowserRouter([
   {
@@ -18,11 +14,12 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Index/>,
-        loader: clientesLoader
+        loader: clientesLoader //!Loaders para obtener datos d euna API o de un objeto (similar a un state)
       },
       {
         path: "/clientes/nuevo",
-        element: <NuevoCliente/>
+        element: <NuevoCliente/>,
+        action: nuevoClienteAction//!Utiliza accions para procesar la entrada de datos en un Form
       }
     ]
   }
