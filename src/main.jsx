@@ -22,7 +22,8 @@ const router = createBrowserRouter([
       {
         path: "/clientes/nuevo",
         element: <NuevoCliente/>,
-        action: nuevoClienteAction//!Utiliza accions para procesar la entrada de datos en un Form
+        action: nuevoClienteAction,//!Utiliza accions para procesar la entrada de datos en un Form
+        errorElement: <ErrorPage/>
       },
       {
         path: '/clientes/:clienteId/editar',
