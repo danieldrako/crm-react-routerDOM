@@ -1,9 +1,31 @@
 import { Outlet, useLocation, Link } from "react-router-dom"
+import { useState } from 'react';
+import Caratula from "./Caratula";
+
 
 const Layout = () => {
     const location = useLocation()
+    const [load, setLoad] = useState(false)
+
   return (
-    <div className="md:flex md:min-h-scren">
+<> 
+
+{
+  !load? (
+    <>
+    <Caratula/>
+    <div className="py-10 px-10 mx-0 min-w-full flex flex-col items-center">
+      <button 
+        className='bg-purple-900 text-white hover:bg-blue-400 font-bold py-2 px-4 mt-3 rounded text-4xl '
+        type="button"
+        onClick={ () => setLoad(!load)}
+        >Inicio 
+        </button>
+    </div>
+
+    </>
+    ):(
+      <div className="md:flex md:min-h-scren">
         <aside className="md:w-1/4 bg-sky-900 px-5 py-10">
           <h2 className= "text-4xl font-black text-center text-yellow-500">CRM - Clientes</h2>
 
@@ -21,7 +43,12 @@ const Layout = () => {
           <Outlet/>
         </main>
     </div>
+    )
+}
+    
+    </>
   )
 }
 
 export default Layout
+
